@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cronentries>
+    <cron>
+        <url>/checkPill?type=morning</url>
+        <description>Checks if the pill has been taken</description>
+        <schedule>every day 09:00</schedule>
+    </cron>
+    <cron>
+        <url>/checkPill?type=evening</url>
+        <description>Checks if the pill has been taken</description>
+        <schedule>every day 21:00</schedule>
+    </cron>
+</cronentries>
