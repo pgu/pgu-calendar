@@ -71,12 +71,13 @@ public class CheckPillServlet extends HttpServlet {
 
         if (null == pillToCheck) {
             LOGGER.info("An alert must be sent");
-
-            // TODO PGU send alert
-            if (isMorning) {
-                // http://code.google.com/appengine/docs/java/mail/overview.html
-            }
+            // http://code.google.com/appengine/docs/java/mail/overview.html
+            sendMailForPill(isMorning);
         }
+    }
+
+    private void sendMailForPill(final boolean isMorning) {
+
     }
 
 }
