@@ -92,7 +92,7 @@ public class CheckPillServlet extends HttpServlet {
         final Message msg = new MimeMessage(session);
         setFrom(msg);
         setTo(msg);
-        setSubject("Remember :-)", msg);
+        setSubject(msg);
         setBody(isMorning, msg);
         sendEmail(msg);
     }
@@ -135,9 +135,9 @@ public class CheckPillServlet extends HttpServlet {
         }
     }
 
-    private void setSubject(final String subject, final Message msg) {
+    private void setSubject(final Message msg) {
         try {
-            msg.setSubject(subject);
+            msg.setSubject("Remember :-)");
         } catch (final MessagingException e) {
             LOGGER.severe(e.getMessage());
         }
