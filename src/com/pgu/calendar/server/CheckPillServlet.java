@@ -107,7 +107,7 @@ public class CheckPillServlet extends HttpServlet {
 
     private void setFrom(final Message msg) {
         try {
-            msg.setFrom(new InternetAddress("pgu.dev@gmail.com", "Pill Admin"));
+            msg.setFrom(new InternetAddress("guilcher.pascal.dev@gmail.com", "Pill Admin"));
         } catch (final AddressException e) {
             LOGGER.severe(e.getMessage());
         } catch (final MessagingException e) {
