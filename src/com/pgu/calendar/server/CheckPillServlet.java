@@ -1,11 +1,19 @@
 package com.pgu.calendar.server;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 import java.util.logging.Logger;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -77,7 +85,26 @@ public class CheckPillServlet extends HttpServlet {
     }
 
     private void sendMailForPill(final boolean isMorning) {
+        final Properties props = new Properties();
+        final Session session = Session.getDefaultInstance(props);
 
+        final Message msg = new MimeMessage(session);
+        try {
+            msg.setFrom(new InternetAddress(""));
+        } catch (final AddressException e) {
+            LOGGER.severe(e.getMessage());
+        } catch (final MessagingException e) {
+            LOGGER.severe(e.getMessage());
+        }
+
+        try {
+            msg.addRecipient(Message.RecipientType.TO, new InternetAddress("", "Eemm"));
+        } catch (final UnsupportedEncodingException e) {
+            LOGGER.severe(e.getMessage());
+        } catch (final MessagingException e) {
+            LOGGER.severe(e.getMessage());
+        }
+        final String msgBody = "You need to take you pill of the " + (isMorning ? "morning" : "afternoon");
     }
 
 }
