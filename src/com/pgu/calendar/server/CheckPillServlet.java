@@ -29,8 +29,9 @@ public class CheckPillServlet extends HttpServlet {
 
     private static final String PILL_TYPE_MORNING = "morning";
     private static final String PILL_TYPE_EVENING = "evening";
+    private static final String TEST              = "test";
 
-    private static final Logger LOGGER = Logger.getLogger(CheckPillServlet.class.getName());
+    private static final Logger LOGGER            = Logger.getLogger(CheckPillServlet.class.getName());
 
     @Override
     protected void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException,
@@ -43,8 +44,8 @@ public class CheckPillServlet extends HttpServlet {
     @Override
     protected void doPost(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException,
             IOException {
-        final String paramType = req.getParameter("type");
 
+        final String paramType = req.getParameter("type");
         LOGGER.info("type " + paramType);
 
         boolean isMorning = false;
@@ -53,6 +54,9 @@ public class CheckPillServlet extends HttpServlet {
 
         } else if (PILL_TYPE_EVENING.equalsIgnoreCase(paramType)) {
             isMorning = false;
+
+        } else if (TEST.equalsIgnoreCase(paramType)) {
+            sendMailForPill(true);
 
         } else {
             resp.setContentType("text/plain");
