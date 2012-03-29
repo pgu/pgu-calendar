@@ -3,12 +3,12 @@
     <cron>
         <url>/checkPill?type=morning</url>
         <description>Checks if the pill has been taken</description>
-        <schedule>every day 08:00</schedule>
+        <schedule>every day 07:00</schedule>
     </cron>
     <cron>
         <url>/checkPill?type=evening</url>
         <description>Checks if the pill has been taken</description>
-        <schedule>every day 20:00</schedule>
+        <schedule>every day 19:00</schedule>
     </cron>
     <!-- 
     <cron>
