@@ -133,7 +133,8 @@ public class CheckPillServlet extends HttpServlet {
 
     private void setBody(final boolean isMorning, final Message msg) {
         try {
-            msg.setText(String.format("You need to take your %s pill.", isMorning ? "morning" : "evening"));
+            msg.setText(String.format("You need to take your %s pill.\nhttp://pgu-calendar.appspot.com/\n",
+                    isMorning ? "morning" : "evening"));
         } catch (final MessagingException e) {
             LOGGER.severe(e.getMessage());
         }
