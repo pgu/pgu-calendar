@@ -9,6 +9,8 @@
 
       <threadsafe>true</threadsafe>
   -->
+  <threadsafe>true</threadsafe>
+  <precompilation-enabled>false</precompilation-enabled>
 
   <!-- Configure serving/caching of GWT files -->
   <static-files>
