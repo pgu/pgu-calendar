@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <cronentries>
-    <cron>
-        <url>/checkPill?type=morning</url>
-        <description>Checks if the pill has been taken</description>
-        <schedule>every day 07:00</schedule>
-    </cron>
-    <cron>
-        <url>/checkPill?type=evening</url>
-        <description>Checks if the pill has been taken</description>
-        <schedule>every day 19:00</schedule>
-    </cron>
+<!--     <cron> -->
+<!--         <url>/checkPill?type=morning</url> -->
+<!--         <description>Checks if the pill has been taken</description> -->
+<!--         <schedule>every day 07:00</schedule> -->
+<!--     </cron> -->
+<!--     <cron> -->
+<!--         <url>/checkPill?type=evening</url> -->
+<!--         <description>Checks if the pill has been taken</description> -->
+<!--         <schedule>every day 19:00</schedule> -->
+<!--     </cron> -->
     <!-- 
     <cron>
         <url>/checkPill?type=test</url>
